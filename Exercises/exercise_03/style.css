@@ -1,0 +1,252 @@
+body {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(images/background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+.container .title {
+    background-color: #0099cc;
+    width: 100%;
+    color: white;
+    text-align: center;
+    position: absolute;
+    margin: 0;
+    padding: 3px 0;
+    top: 0;
+    left: 0;
+}
+
+/* First card */
+.card-1 {
+    position: relative;
+    display: flex;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.card-1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card-1 img {
+    transition: transform 2s ease 2s;
+}
+
+.card-1 .content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    background-color: #2a3f55b3;
+    text-align: center;
+    opacity: 0;
+    overflow: hidden;
+    transition:
+        transform 2s ease 0s,
+        opacity 2s ease 0s;
+}
+
+.card-1 .content .name {
+    position: relative;
+    left: 100%;
+    margin: 0;
+    padding: 15px 0;
+    background-color: #2a3f55;
+}
+
+.card-1 .content .about {
+    position: relative;
+    left: 100%;
+    margin: 0;
+    padding: 15px 10px;
+}
+
+/* ON HOVER */
+.card-1:hover img {
+    transform: scale(1.3);
+}
+
+.card-1:hover .content {
+    transform: rotate(360deg);
+    opacity: 1;
+}
+
+.card-1:hover .content .name {
+    left: 0;
+    transition: left 2s ease 4s;
+}
+
+.card-1:hover .content .about {
+    left: 0;
+    transition: left 2s ease 5s;
+}
+
+/* Second card */
+.card-2 {
+    position: relative;
+    width: 300px;
+    height: 428.5px;
+    overflow: hidden;
+}
+
+.card-2 .front,
+.card-2 .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 2s ease 0s;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+.card-2 .front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.card-2 .back {
+    text-align: center;
+    background-color: white;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* ON HOVER */
+.card-2:hover .front {
+    transform: rotateY(180deg);
+}
+
+.card-2:hover .back {
+    transform: rotateY(0deg);
+}
+
+/* Back content */
+.card-2 .content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+}
+
+.card-2 .back::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 100%;
+    background-color: #2a3f55b3;
+    transform: scale(0);
+    transition: transform 0s ease 1s,
+        border-radius 0s ease 1s;
+}
+
+.card-2 .content .name {
+    position: relative;
+    left: 100%;
+    margin: 0;
+    padding: 15px 0;
+    background-color: #2a3f55;
+    transition: left 0s ease 1s;
+}
+
+.card-2 .content .about {
+    position: relative;
+    left: 100%;
+    margin: 0;
+    padding: 15px 10px;
+    transition: left 0s ease 1s;
+}
+
+.card-2 .content .skills-title {
+    color: #00ff00;
+    transform: scale(0);
+    transition: transform 0s ease 1s;
+}
+
+.card-2 .content .skills {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-content: center;
+    gap: 40px;
+}
+
+.card-2 .content .skills .skill {
+    background-color: #00ff00;
+    padding: 10px 20px;
+    margin: 0;
+    transform: scale(0);
+    transition: transform 0s ease 1s;
+}
+
+/* Back Content animation */
+.card-2:hover .back::before {
+    transform: scale(1);
+    border-radius: 0;
+    transition:
+        transform 2s ease 1s,
+        border-radius 2s ease 1s;
+}
+
+.card-2:hover .content .name {
+    left: 0;
+    transition: left 2s ease 3s;
+}
+
+.card-2:hover .content .about {
+    left: 0;
+    transition: left 2s ease 4s;
+
+}
+
+.card-2:hover .content .skills-title {
+    transform: scale(1);
+    transition: transform 1s ease 5.5s;
+}
+
+.card-2:hover .content .skills :nth-child(1) {
+    transform: scale(1);
+    transition: transform 1s ease 6s;
+}
+
+.card-2:hover .content .skills :nth-child(2) {
+    transform: scale(1);
+    transition: transform 1s ease 6.3s;
+}
+
+.card-2:hover .content .skills :nth-child(3) {
+    transform: scale(1);
+    transition: transform 1s ease 6.6s;
+}
+
+.card-2:hover .content .skills :nth-child(4) {
+    transform: scale(1);
+    transition: transform 1s ease 6.9s;
+}
